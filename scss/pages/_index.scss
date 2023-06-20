@@ -2,6 +2,10 @@
 @import "/node_modules/rfs/sass.sass";
 
 .section-videos {
+    // padding: 5vh 10vw;
+}
+
+.section-header {
     padding: 5vh 10vw;
 }
 
@@ -20,7 +24,7 @@
 }
 
 .video-frame {
-    width: 70%;
+    width: 100%;
     height: 400px;
     min-width: 240px;
 }

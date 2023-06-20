@@ -35,12 +35,15 @@ export default function Index() {
             direction='vertical'
             // size={'small'}
           > */}
-          <h2 className='title'>
-            Videos
-          </h2>
-          <p className='description'>
-            Estos son nuestros mas recientes videos..
-          </p>
+          <div className='section-header'>
+            <h2 className='title'>
+              Videos
+            </h2>
+            <p className='description'>
+              Estos son nuestros mas recientes videos..
+            </p>
+          </div>
+
           {/* </Space> */}
         </Col>
         <Col span={24}>
@@ -51,8 +54,6 @@ export default function Index() {
             <div>
               <h3 className='item-title'>404 - Unx100to (Cover)</h3>
               <iframe
-                width="70%"
-                height="400px"
                 className='video-frame'
                 src="https://www.youtube.com/embed/okdlTOmKybs"
                 title="YouTube video player"
@@ -62,7 +63,13 @@ export default function Index() {
             </div>
             <div>
               <h3 className='item-title'>404 - Mix Vallenato Romantico (Cover)</h3>
-              <iframe width="70%" height="400px" src="https://www.youtube.com/embed/PkNMR3J0Gmg" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+              <iframe
+                className='video-frame'
+                src="https://www.youtube.com/embed/PkNMR3J0Gmg"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen></iframe>
             </div>
           </Space>
           <Space
