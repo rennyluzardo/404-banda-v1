@@ -55,7 +55,7 @@ export default function MainLayout({ children }) {
               direction='horizontal'
               align='end'
               style={{ width: '100%', justifyContent: 'flex-end' }}
-              
+
             >
               <a href='#videos' className='menu-item'>Vídeos</a>
               <a href='#musica' className='menu-item'>Música</a>
@@ -69,7 +69,10 @@ export default function MainLayout({ children }) {
       <Content style={contentStyle}>
         {children}
       </Content>
-      <Footer style={footerStyle}>Hecho con <span className="heart"></span> por Ing. Renny Luzardo. Todos los derechos reservados 2023.</Footer>
+      <Footer
+        style={footerStyle}
+        className='footer'
+      >Hecho con <span className="heart"></span> por Ing. Renny Luzardo. © 2023 404banda.com.</Footer>
     </Layout >
   )
 }
