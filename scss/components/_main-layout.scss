@@ -2,6 +2,7 @@
 
 .header {
   padding: 0 5px !important;
+  background-color: beige;
 }
 
 .space-align-container {
@@ -67,6 +68,9 @@
 
 .menu-item {
   @include font-size(.8rem);
+
+  color: black;
+  font-weight: 500;
 }
 
 .footer {
