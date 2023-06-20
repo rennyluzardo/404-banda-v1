@@ -51,8 +51,7 @@ export default function Index() {
             direction='vertical'
             style={{ width: '100%' }}
           >
-            <div>
-              <h3 className='item-title'>404 - Unx100to (Cover)</h3>
+            <div className='video-box'>
               <iframe
                 className='video-frame'
                 src="https://www.youtube.com/embed/okdlTOmKybs"
@@ -60,9 +59,9 @@ export default function Index() {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen></iframe>
+              <h3 className='item-title'>404 - Unx100to (Cover)</h3>
             </div>
-            <div>
-              <h3 className='item-title'>404 - Mix Vallenato Romantico (Cover)</h3>
+            <div className='video-box'>
               <iframe
                 className='video-frame'
                 src="https://www.youtube.com/embed/PkNMR3J0Gmg"
@@ -70,6 +69,7 @@ export default function Index() {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen></iframe>
+              <h3 className='item-title'>404 - Mix Vallenato Romantico (Cover)</h3>
             </div>
           </Space>
           <Space
