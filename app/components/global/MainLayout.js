@@ -43,7 +43,7 @@ const footerStyle = {
 export default function MainLayout({ children }) {
   return (
     <Layout>
-      <Header style={headerStyle}>
+      <Header style={headerStyle} className='header'>
         <Row>
           <Col span={12}>
             <Space align="start" className='logo'>
