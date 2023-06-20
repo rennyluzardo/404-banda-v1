@@ -23,7 +23,7 @@ const contentStyle = {
   minHeight: 120,
   lineHeight: '120px',
   color: '#fff',
-  backgroundColor: '#108ee9',
+  backgroundColor: 'beige',
 }
 const footerStyle = {
   textAlign: 'center',
@@ -46,8 +46,8 @@ export default function MainLayout({ children }) {
       <Header style={headerStyle}>
         <Row>
           <Col span={12}>
-            <Space align="start" style={{ width: '100%' }}>
-              <p>404 BANDA</p>
+            <Space align="start" className='logo'>
+              <img src='static/images/global/logo.png'></img>
             </Space>
           </Col>
           <Col span={12}>
@@ -70,6 +70,6 @@ export default function MainLayout({ children }) {
         {children}
       </Content>
       <Footer style={footerStyle}>Hecho con <span className="heart"></span> por Ing. Renny Luzardo. Todos los derechos reservados 2023.</Footer>
-    </Layout>
+    </Layout >
   )
 }
