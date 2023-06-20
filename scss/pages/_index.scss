@@ -8,10 +8,23 @@
 .title {
     line-height: normal;
     text-align: left;
+    color: dimgrey;
     @include font-size(3rem);
 }
 
 .description {
     line-height: normal;
     text-align: left;
+    color: grey;
+    @include font-size(1rem);
+}
+
+.video-frame {
+    width: 70%;
+    height: 400px;
+    min-width: 240px;
+}
+
+.item-title {
+    color: darkslategray;
 }
