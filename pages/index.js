@@ -52,23 +52,34 @@ export default function Index() {
             style={{ width: '100%' }}
           >
             <div className='video-box'>
-              <iframe
-                className='video-frame'
-                src="https://www.youtube.com/embed/okdlTOmKybs"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen></iframe>
+              <div style={{
+                display: 'flex',
+                height: '380px'
+              }}>
+                <iframe
+                  className='video-frame'
+                  src="https://www.youtube.com/embed/okdlTOmKybs"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen></iframe>
+              </div>
+
               <h3 className='item-title'>404 - Unx100to (Cover)</h3>
             </div>
             <div className='video-box'>
-              <iframe
-                className='video-frame'
-                src="https://www.youtube.com/embed/PkNMR3J0Gmg"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen></iframe>
+              <div style={{
+                display: 'flex',
+                height: '380px'
+              }}>
+                <iframe
+                  className='video-frame'
+                  src="https://www.youtube.com/embed/PkNMR3J0Gmg"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen></iframe>
+              </div>
               <h3 className='item-title'>404 - Mix Vallenato Romantico (Cover)</h3>
             </div>
           </Space>
