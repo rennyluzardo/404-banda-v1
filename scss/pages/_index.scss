@@ -1,0 +1,17 @@
+// @import "./node_modules/rfs/scss.scss";
+@import "/node_modules/rfs/sass.sass";
+
+.section-videos {
+    padding: 50px 60px;
+}
+
+.title {
+    line-height: normal;
+    text-align: left;
+    @include font-size(3rem);
+}
+
+.description {
+    line-height: normal;
+    text-align: left;
+}
