@@ -1,3 +1,5 @@
+@import "/node_modules/rfs/sass.sass";
+
 .header {
   padding: 0 5px !important;
 }
@@ -61,4 +63,8 @@
   img {
     width: 110px;
   }
+}
+
+.menu-item {
+  @include font-size(.8rem);
 }
