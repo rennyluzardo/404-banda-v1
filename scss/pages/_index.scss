@@ -6,7 +6,7 @@
 }
 
 .section-header {
-    padding: 5vh 10vw;
+    padding: 5vh 5vw;
 }
 
 .title {
@@ -20,7 +20,7 @@
     line-height: normal;
     text-align: left;
     color: grey;
-    @include font-size(1rem);
+    @include font-size(.9rem);
 }
 
 .video-frame {
@@ -40,4 +40,9 @@
 .video-box {
     display: flex;
     flex-direction: column;
+}
+
+.playlist {
+    width: 100%;
+    padding: 0px 2em;
 }

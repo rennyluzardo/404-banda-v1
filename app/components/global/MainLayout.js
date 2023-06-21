@@ -44,21 +44,23 @@ export default function MainLayout({ children }) {
     <Layout>
       <Header style={headerStyle} className='header'>
         <Row>
-          <Col span={10}>
+          <Col span={8}>
             <Space align="start" className='logo'>
               <img src='static/images/global/logo.png'></img>
             </Space>
           </Col>
-          <Col span={14}>
+          <Col span={16}>
             <Space
               direction='horizontal'
               align='end'
-              style={{ width: '100%', justifyContent: 'flex-end' }}
-
+              style={{
+                width: '100%',
+                justifyContent: 'flex-end',
+                paddingRight: '1em'
+              }}
             >
               <a href='#videos' className='menu-item'>Vídeos</a>
-              <a href='#musica' className='menu-item'>Música</a>
-              <a href='#letras' className='menu-item'>Letras</a>
+              <a href='#musica' className='menu-item'>Canciones</a>
               <a href='#' className='menu-item'>Contacto</a>
             </Space>
           </Col>
