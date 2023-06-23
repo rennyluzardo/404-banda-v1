@@ -13,6 +13,7 @@
     line-height: normal;
     text-align: left;
     color: dimgrey;
+
     @include font-size(3rem);
 }
 
@@ -20,7 +21,9 @@
     line-height: normal;
     text-align: left;
     color: grey;
-    @include font-size(.9rem);
+    margin-top: 0.8em;
+
+    @include font-size(.8rem);
 }
 
 .video-frame {

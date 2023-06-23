@@ -2,12 +2,8 @@
 @import "core/variables",
 "core/globals";
 
-// Pages
-// @import "pages/**/*";
 // Components
-// @import "components/**/*";
-@import "components/main-layout",
-"pages/index";
+@import "components/main-layout";
 
-// @import "../node_modules/rfs/sass.sass";
-// @import "../node_modules/rfs/sass.sass";
+// Pages
+@import "pages/index";
