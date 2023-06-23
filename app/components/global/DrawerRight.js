@@ -14,10 +14,11 @@ export default function DrawerRight(props) {
       placement="right"
       onClose={props.onClose}
       open={open}
+      style={{ color: 'rgba(0, 0, 0, 0.45)' }}
     >
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
+      <p>{props.song.script}</p>
+      <p>{props.song.script}</p>
+      <p>{props.song.script}</p>
     </Drawer>
   )
 }
