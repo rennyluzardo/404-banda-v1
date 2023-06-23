@@ -61,7 +61,7 @@ export default function MainLayout({ children }) {
             >
               <a href='#videos' className='menu-item'>Vídeos</a>
               <a href='#musica' className='menu-item'>Canciones</a>
-              <a href='#' className='menu-item'>Contacto</a>
+              <a href='#contacto' className='menu-item'>Contacto</a>
             </Space>
           </Col>
         </Row>

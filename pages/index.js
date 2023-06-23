@@ -1,23 +1,27 @@
 import Image from 'next/image'
 import styles from '../scss/page.module.css'
 import MainLayout from '@/app/components/global/MainLayout'
-import { Carousel, Row, Col, Space, Avatar, List, } from 'antd'
+import { Carousel, Row, Col, Space, Avatar, List, Form, Input, Button, Checkbox, } from 'antd'
 import SectionItem from '@/app/components/global/SectionItem'
 import DrawerRight from '@/app/components/global/DrawerRight'
 import { useState } from 'react'
 
 const data = [
   {
-    title: 'Ant Design Title 1',
+    title: 'Title 1',
+    script: '...'
   },
   {
-    title: 'Ant Design Title 2',
+    title: 'Title 2',
+    script: '...'
   },
   {
-    title: 'Ant Design Title 3',
+    title: 'Title 3',
+    script: '...'
   },
   {
-    title: 'Ant Design Title 4',
+    title: 'Title 4',
+    script: '...'
   },
 ]
 
@@ -63,7 +67,7 @@ export default function Index() {
         id='videos'
         name='videos'
         title='Vídeos'
-        subtitle='Estos son nuestros mas recientes videos..'
+        subtitle='Estos son nuestros mas recientes vídeos.'
       >
         <Space
           direction='vertical'
@@ -107,7 +111,7 @@ export default function Index() {
         id='musica'
         name='musica'
         title='Canciones'
-        subtitle='Estos son nuestras mas recientes canciones..'
+        subtitle='Estas son nuestras mas recientes canciones.'
       >
         <Space
           direction='vertical'
@@ -136,13 +140,56 @@ export default function Index() {
         </Space>
       </SectionItem>
 
+      <SectionItem
+        id='contacto'
+        name='contacto'
+        title='Contacto'
+        subtitle='Comunícate con nosotros a través de éste formulario de contacto.'
+      >
+        <Space
+          direction='vertical'
+          className='playlist'
+        >
+          <Form
+            name="basic"
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}
+            style={{ maxWidth: 600 }}
+            initialValues={{ remember: true }}
+            // onFinish={onFinish}
+            // onFinishFailed={onFinishFailed}
+            autoComplete="off"
+          >
+            <Form.Item
+              label="Email"
+              name="email"
+              rules={[{ required: true, message: 'Please input your email!' }]}
+            >
+              <Input />
+            </Form.Item>
+
+            <Form.Item
+              label="Número de telefono"
+              name="tel"
+              rules={[{ required: true, message: 'Please input your telephone number!' }]}
+            >
+              <Input.Password />
+            </Form.Item>
+
+            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+              <Button type="primary" htmlType="submit">
+                Enviar
+              </Button>
+            </Form.Item>
+          </Form>
+        </Space>
+      </SectionItem>
+
       <DrawerRight
         open={displayDrawerRight}
         onClose={onCloseDrawerRight}
         song={songToReadLetter}
-      >
-
-      </DrawerRight>
+      />
     </MainLayout>
   )
 }
