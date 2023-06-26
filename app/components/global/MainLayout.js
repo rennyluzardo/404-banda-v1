@@ -19,6 +19,9 @@ const headerStyle = {
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
+  position: 'fixed',
+  top: 0,
+  zIndex: 1,
 }
 const contentStyle = {
   textAlign: 'center',
@@ -29,11 +32,12 @@ const contentStyle = {
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
+  zIndex: 0,
 }
 const footerStyle = {
   textAlign: 'center',
-  color: '#fff',
-  backgroundColor: '#7dbcea',
+  color: 'darkgrey',
+  backgroundColor: 'beige',
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
@@ -76,6 +80,7 @@ export default function MainLayout({ children }) {
           style={{
             maxWidth: '1440px',
             width: '100%',
+            marginTop: '63.9px',
           }}>
           {children}
         </div>
