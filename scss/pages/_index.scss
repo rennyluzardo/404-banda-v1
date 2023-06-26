@@ -9,6 +9,10 @@
   padding: 5vh 5vw;
 }
 
+.section-videos .section-header {
+  padding: 8vh 5vw;
+}
+
 .title {
   line-height: normal;
   text-align: left;
@@ -57,4 +61,22 @@
 
 #videos .ant-card-head {
   text-align: start;
+}
+
+.contact-form {
+  padding: 0px 2em;
+  width: 100%;
+}
+
+.contact-form .ant-space-item {
+  width: 100%;
+  max-width: 720px;
+}
+
+#contact-form label {
+  color: dimgrey;
+}
+
+.slider {
+  // height: 600px;
 }

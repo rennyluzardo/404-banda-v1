@@ -65,7 +65,7 @@ export default function Index() {
   return (
     <MainLayout>
       {/* Slider */}
-      <Carousel autoplay id='main'>
+      <Carousel autoplay id='main' className='slider'>
         <div>
           <h3 style={contentStyle}>Imagen 1</h3>
         </div>
@@ -90,7 +90,7 @@ export default function Index() {
         <Row gutter={24} style={{ margin: 0 }}>
           {!!mockVideos && mockVideos.map((video, i) => (
             <Col xs={24} sm={24} md={24} lg={8} style={{ marginTop: 20 }} key={i}>
-              <Card title={video.title} bordered={false}>
+              <Card title={video.title} bordered={false} style={{ backgroundColor: 'beige' }}>
                 <iframe
                   className='video-frame'
                   src={video.url}
@@ -149,12 +149,12 @@ export default function Index() {
         <Space
           direction='vertical'
           align='center'
-          className='playlist'
+          className='contact-form'
         >
           <Form
-            name="basic"
-            labelCol={{ span: 4 }}
-            wrapperCol={{ span: 20 }}
+            name="contact-form"
+            // labelCol={{ span: 4 }}
+            // wrapperCol={{ span: 20 }}
             // style={{ maxWidth: 600 }}
             initialValues={{ remember: true }}
             // onFinish={onFinish}
@@ -164,13 +164,14 @@ export default function Index() {
               width: '100%',
               // maxWidth: '35vw'
             }}
+            layout='vertical'
           >
             <Form.Item
               label="Email"
               name="email"
               rules={[{ required: true, message: 'Please input your email!' }]}
             >
-              <Input />
+              <Input style={{ backgroundColor: 'beige', borderWidth: '3px' }} />
             </Form.Item>
 
             <Form.Item
@@ -178,11 +179,11 @@ export default function Index() {
               name="tel"
               rules={[{ required: true, message: 'Please input your telephone number!' }]}
             >
-              <Input.Password />
+              <Input style={{ backgroundColor: 'beige', borderWidth: '3px' }} />
             </Form.Item>
 
             <Form.Item label="Mensaje">
-              <TextArea rows={4} />
+              <TextArea rows={4} style={{ backgroundColor: 'beige', borderWidth: '3px' }} />
             </Form.Item>
 
             <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
