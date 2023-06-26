@@ -89,7 +89,7 @@ export default function Index() {
       >
         <Row gutter={24} style={{ margin: 0 }}>
           {!!mockVideos && mockVideos.map((video, i) => (
-            <Col xs={24} sm={24} md={24} lg={8} style={{ marginTop: 20 }}>
+            <Col xs={24} sm={24} md={24} lg={8} style={{ marginTop: 20 }} key={i}>
               <Card title={video.title} bordered={false}>
                 <iframe
                   className='video-frame'
