@@ -14,7 +14,7 @@ function SectionItem(props) {
           </p>
         </div>
       </Col>
-      <Col span={24}>
+      <Col span={24} style={{ padding: '0px 4.6vw' }}>
         {props.children}
       </Col>
     </Row>

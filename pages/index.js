@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import styles from '../scss/page.module.css'
 import MainLayout from '@/app/components/global/MainLayout'
-import { Carousel, Row, Col, Space, Avatar, List, Form, Input, Button, Checkbox, } from 'antd'
+import { Carousel, Row, Col, Space, Avatar, List, Form, Input, Button, Checkbox, Card, } from 'antd'
 import SectionItem from '@/app/components/global/SectionItem'
 import DrawerRight from '@/app/components/global/DrawerRight'
 import { useState } from 'react'
 
-const data = [
+const mockMusic = [
   {
     title: 'Title 1',
     script: '...'
@@ -22,6 +22,20 @@ const data = [
   {
     title: 'Title 4',
     script: '...'
+  },
+]
+
+const mockVideos = [
+  {
+    title: 'Unx100to',
+    script: '...',
+    url: 'https://www.youtube.com/embed/okdlTOmKybs',
+
+  },
+  {
+    title: 'Mix Vallenato Romantico',
+    script: '...',
+    url: 'https://www.youtube.com/embed/PkNMR3J0Gmg',
   },
 ]
 
@@ -48,65 +62,47 @@ export default function Index() {
 
   return (
     <MainLayout>
-
+      {/* Slider */}
       <Carousel autoplay id='main'>
         <div>
-          <h3 style={contentStyle}>1</h3>
+          <h3 style={contentStyle}>Imagen 1</h3>
         </div>
         <div>
-          <h3 style={contentStyle}>2</h3>
+          <h3 style={contentStyle}>Imagen 2</h3>
         </div>
         <div>
-          <h3 style={contentStyle}>3</h3>
+          <h3 style={contentStyle}>Imagen 3</h3>
         </div>
         <div>
-          <h3 style={contentStyle}>4</h3>
+          <h3 style={contentStyle}>Imagen 4</h3>
         </div>
       </Carousel>
+
+      {/* Videos */}
       <SectionItem
         id='videos'
         name='videos'
         title='Vídeos'
         subtitle='Estos son nuestros mas recientes vídeos.'
       >
-        <Space
-          direction='vertical'
-          style={{ width: '100%' }}
-        >
-          <div className='video-box'>
-            <div style={{
-              display: 'flex',
-              height: '380px'
-            }}>
-              <iframe
-                className='video-frame'
-                src="https://www.youtube.com/embed/okdlTOmKybs"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen></iframe>
-            </div>
-
-            <h3 className='item-title'>404 - Unx100to (Cover)</h3>
-          </div>
-          <div className='video-box'>
-            <div style={{
-              display: 'flex',
-              height: '380px'
-            }}>
-              <iframe
-                className='video-frame'
-                src="https://www.youtube.com/embed/PkNMR3J0Gmg"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen></iframe>
-            </div>
-            <h3 className='item-title'>404 - Mix Vallenato Romantico (Cover)</h3>
-          </div>
-        </Space>
+        <Row gutter={24} style={{ margin: 0 }}>
+          {!!mockVideos && mockVideos.map((video, i) => (
+            <Col xs={24} sm={24} md={24} lg={8} style={{ marginTop: 20 }}>
+              <Card title={video.title} bordered={false}>
+                <iframe
+                  className='video-frame'
+                  src={video.url}
+                  title={video.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen></iframe>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       </SectionItem>
 
+      {/* Music */}
       <SectionItem
         id='musica'
         name='musica'
@@ -119,7 +115,7 @@ export default function Index() {
         >
           <List
             itemLayout="horizontal"
-            dataSource={data}
+            dataSource={mockMusic}
             renderItem={(item, index) => (
               <List.Item
                 actions={[
@@ -140,6 +136,7 @@ export default function Index() {
         </Space>
       </SectionItem>
 
+      {/* Contact */}
       <SectionItem
         id='contacto'
         name='contacto'
@@ -185,6 +182,7 @@ export default function Index() {
         </Space>
       </SectionItem>
 
+      {/* Drawer */}
       <DrawerRight
         open={displayDrawerRight}
         onClose={onCloseDrawerRight}
