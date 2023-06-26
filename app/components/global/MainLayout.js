@@ -55,7 +55,9 @@ export default function MainLayout({ children }) {
         >
           <Col span={8}>
             <Space align="start" className='logo'>
-              <img src='static/images/global/logo.png'></img>
+              <a href='#'>
+                <img src='static/images/global/logo.png' href='#'></img>
+              </a>
             </Space>
           </Col>
           <Col span={16}>
