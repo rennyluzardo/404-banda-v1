@@ -2,54 +2,59 @@
 @import "/node_modules/rfs/sass.sass";
 
 .section-videos {
-    // padding: 5vh 10vw;
+  // padding: 5vh 10vw;
 }
 
 .section-header {
-    padding: 5vh 5vw;
+  padding: 5vh 5vw;
 }
 
 .title {
-    line-height: normal;
-    text-align: left;
-    color: dimgrey;
+  line-height: normal;
+  text-align: left;
+  color: dimgrey;
 
-    @include font-size(3rem);
+  @include font-size(3rem);
 }
 
 .description {
-    line-height: normal;
-    text-align: left;
-    color: grey;
-    margin-top: 0.8em;
+  line-height: normal;
+  text-align: left;
+  color: grey;
+  margin-top: 0.8em;
 
-    @include font-size(.8rem);
+  @include font-size(.8rem);
 }
 
 .video-frame {
-    width: 100%;
-    min-height: 180px;
-    min-width: 240px;
+  width: 100%;
+  min-height: 300px;
+  min-width: 240px;
 }
 
 .item-title {
-    color: darkslategray;
-    line-height: normal;
-    text-align: start;
-    padding: 1em 1em;
-    @include font-size(.6rem);
+  color: darkslategray;
+  line-height: normal;
+  text-align: start;
+  padding: 1em 1em;
+  @include font-size(.6rem);
 }
 
 .video-box {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .playlist {
-    width: 100%;
-    padding: 0px 2em;
+  padding: 0px 2em;
+  width: 100%;
+}
+
+.playlist .ant-space-item {
+  width: 100%;
+  max-width: 900px;
 }
 
 #videos .ant-card-head {
-    text-align: start;
+  text-align: start;
 }

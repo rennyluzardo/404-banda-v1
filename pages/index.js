@@ -152,8 +152,8 @@ export default function Index() {
         >
           <Form
             name="basic"
-            labelCol={{ span: 6 }}
-            wrapperCol={{ span: 18 }}
+            labelCol={{ span: 4 }}
+            wrapperCol={{ span: 20 }}
             // style={{ maxWidth: 600 }}
             initialValues={{ remember: true }}
             // onFinish={onFinish}
