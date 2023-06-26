@@ -1,5 +1,12 @@
 @import "/node_modules/rfs/sass.sass";
 
+.main-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .header {
   padding: 0 5px !important;
   background-color: beige;

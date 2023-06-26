@@ -16,6 +16,9 @@ const headerStyle = {
   height: 64,
   paddingInline: 50,
   lineHeight: '64px',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
 }
 const contentStyle = {
   textAlign: 'center',
@@ -23,27 +26,29 @@ const contentStyle = {
   lineHeight: '120px',
   color: '#fff',
   backgroundColor: 'beige',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
 }
 const footerStyle = {
   textAlign: 'center',
   color: '#fff',
   backgroundColor: '#7dbcea',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
 }
-
-// export default function RootLayout({ children }) {
-//   return (
-//     <html lang="en">
-//       <body className={inter.className}>{children}</body>
-//     </html>
-//   )
-// }
-
 
 export default function MainLayout({ children }) {
   return (
-    <Layout>
+    <Layout className='main-layout'>
       <Header style={headerStyle} className='header'>
-        <Row>
+        <Row
+          style={{
+            maxWidth: '1440px',
+            width: '100%',
+          }}
+        >
           <Col span={8}>
             <Space align="start" className='logo'>
               <img src='static/images/global/logo.png'></img>
@@ -65,15 +70,27 @@ export default function MainLayout({ children }) {
             </Space>
           </Col>
         </Row>
-
       </Header>
       <Content style={contentStyle}>
-        {children}
+        <div
+          style={{
+            maxWidth: '1440px',
+            width: '100%',
+          }}>
+          {children}
+        </div>
       </Content>
       <Footer
         style={footerStyle}
         className='footer'
-      >Hecho con <span className="heart"></span> por Ing. Renny Luzardo. © 2023 404banda.com.</Footer>
+      >
+        <div style={{
+          maxWidth: '1440px',
+          width: '100%',
+        }}>
+          Hecho con <span className="heart"></span> por Ing. Renny Luzardo. © 2023 404banda.com.
+        </div>
+      </Footer>
     </Layout >
   )
 }
