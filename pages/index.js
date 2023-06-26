@@ -6,6 +6,8 @@ import SectionItem from '@/app/components/global/SectionItem'
 import DrawerRight from '@/app/components/global/DrawerRight'
 import { useState } from 'react'
 
+const { TextArea } = Input
+
 const mockMusic = [
   {
     title: 'Title 1',
@@ -145,17 +147,22 @@ export default function Index() {
       >
         <Space
           direction='vertical'
+          align='center'
           className='playlist'
         >
           <Form
             name="basic"
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 16 }}
-            style={{ maxWidth: 600 }}
+            labelCol={{ span: 6 }}
+            wrapperCol={{ span: 18 }}
+            // style={{ maxWidth: 600 }}
             initialValues={{ remember: true }}
             // onFinish={onFinish}
             // onFinishFailed={onFinishFailed}
             autoComplete="off"
+            style={{
+              width: '100%',
+              // maxWidth: '35vw'
+            }}
           >
             <Form.Item
               label="Email"
@@ -166,11 +173,15 @@ export default function Index() {
             </Form.Item>
 
             <Form.Item
-              label="Número de telefono"
+              label="Teléfono"
               name="tel"
               rules={[{ required: true, message: 'Please input your telephone number!' }]}
             >
               <Input.Password />
+            </Form.Item>
+
+            <Form.Item label="Mensaje">
+              <TextArea rows={4} />
             </Form.Item>
 
             <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
@@ -188,6 +199,6 @@ export default function Index() {
         onClose={onCloseDrawerRight}
         song={songToReadLetter}
       />
-    </MainLayout>
+    </MainLayout >
   )
 }
