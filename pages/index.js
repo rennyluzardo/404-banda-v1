@@ -44,9 +44,7 @@ const mockVideos = [
 ]
 
 const contentStyle = {
-  height: '500px',
   color: '#fff',
-  lineHeight: '500px',
   textAlign: 'center',
   background: '#364d79',
 };
@@ -67,18 +65,30 @@ export default function Index() {
   return (
     <MainLayout>
       {/* Slider */}
-      <Carousel autoplay id='main' className='slider'>
-        <div>
-          <h3 style={contentStyle}>Imagen 1</h3>
+      <Carousel autoplay={false} id='main' className='slider'>
+        <div className='slider__img-box'>
+          {/* <h3 style={contentStyle}>
+            <img src='static/images/slider/home-01.jpeg' />
+          </h3> */}
+          <div style={contentStyle}>
+            {/* 1 */}
+            <img src='static/images/slider/slider-1.png'></img>
+          </div>
         </div>
-        <div>
-          <h3 style={contentStyle}>Imagen 2</h3>
+        <div className='slider__img-box'>
+          <div style={contentStyle}>
+            <img src='static/images/slider/slider-2.png'></img>
+          </div>
         </div>
-        <div>
-          <h3 style={contentStyle}>Imagen 3</h3>
+        <div className='slider__img-box'>
+          <div style={contentStyle}>
+            <img src='static/images/slider/slider-3.png'></img>
+          </div>
         </div>
-        <div>
-          <h3 style={contentStyle}>Imagen 4</h3>
+        <div className='slider__img-box'>
+          <div style={contentStyle}>
+            <img src='static/images/slider/slider-4.png'></img>
+          </div>
         </div>
       </Carousel>
 
