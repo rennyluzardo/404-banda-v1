@@ -9,7 +9,7 @@
 
 .header {
   padding: 0 5px !important;
-  background-color: beige;
+  background-color: #313131;
 }
 
 .space-align-container {
@@ -76,9 +76,13 @@
 .menu-item {
   @include font-size(.8rem);
 
-  color: dimgrey;
-  font-weight: 500;
+  color: white;
+  font-weight: bold;
   margin-right: 1.4vw;
+
+  &:hover {
+    color: #ff3535;
+  }
 }
 
 .footer {
