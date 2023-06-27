@@ -6,11 +6,11 @@
 }
 
 .section-header {
-  padding: 5vh 5vw;
+  padding: 2em 2em 1em;
 }
 
 .section-videos .section-header {
-  padding: 8vh 5vw;
+  // padding: 8vh 5vw;
 }
 
 .title {
@@ -27,7 +27,7 @@
   color: grey;
   margin-top: 0.8em;
 
-  @include font-size(.8rem);
+  @include font-size(1rem);
 }
 
 .video-frame {
@@ -56,7 +56,6 @@
 
 .playlist .ant-space-item {
   width: 100%;
-  max-width: 900px;
 }
 
 #videos .ant-card-head {
@@ -78,5 +77,9 @@
 }
 
 .slider {
-  // height: 600px;
+  &__img-box {
+    img {
+      width: 100%;
+    }
+  }
 }
