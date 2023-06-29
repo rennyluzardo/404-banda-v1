@@ -28,16 +28,17 @@ const contentStyle = {
   minHeight: 120,
   lineHeight: '120px',
   color: '#fff',
-  backgroundColor: 'beige',
+  // backgroundColor: 'beige',
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
   zIndex: 0,
+  marginBottom: 30,
 }
 const footerStyle = {
   textAlign: 'center',
   color: 'darkgrey',
-  backgroundColor: 'beige',
+  // backgroundColor: 'beige',
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
@@ -48,10 +49,7 @@ export default function MainLayout({ children }) {
     <Layout className='main-layout'>
       <Header style={headerStyle} className='header'>
         <Row
-          style={{
-            maxWidth: '1440px',
-            width: '100%',
-          }}
+          className='header__container'
         >
           <Col span={8}>
             <Space align="start" className='logo'>
@@ -79,11 +77,7 @@ export default function MainLayout({ children }) {
       </Header>
       <Content style={contentStyle}>
         <div
-          style={{
-            maxWidth: '1440px',
-            width: '100%',
-            marginTop: '63.9px',
-          }}>
+          className='content-container'>
           {children}
         </div>
       </Content>

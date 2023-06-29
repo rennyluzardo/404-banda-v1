@@ -3,7 +3,7 @@ import { Carousel, Row, Col, Space, Avatar, List, } from 'antd'
 
 function SectionItem(props) {
   return (
-    <Row className={`section-${props.name}`} id={props.id}>
+    <Row className={`section-${props.name} section-item`} id={props.id}>
       <Col span={24}>
         <div className='section-header'>
           <h2 className='title'>
