@@ -52,6 +52,7 @@ export default function Index() {
 
       {/* Sections */}
       <SectionList
+        setDisplayDrawerRight={setDisplayDrawerRight}
         setSongToReadLetter={setSongToReadLetter}
       />
 

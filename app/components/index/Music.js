@@ -21,16 +21,13 @@ const mockMusic = [
 ]
 
 
-function Music() {
+function Music(props) {
   const [songToReadLetter, setSongToReadLetter] = useState({})
 
-  // useEffect(() => {
-  //   props.setSongToReadLetter(songToReadLetter)
-  // }, [songToReadLetter])
-
   const onShowViewLetter = song => {
-    setDisplayDrawerRight(true)
-    setSongToReadLetter(song)
+    props.setDisplayDrawerRight(true)
+    // setSongToReadLetter(song)
+    props.setSongToReadLetter(song)
   }
 
   return (

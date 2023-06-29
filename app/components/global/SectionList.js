@@ -37,7 +37,10 @@ function SectionList(props) {
         title='Canciones'
         subtitle='Estas son nuestras mas recientes canciones.'
       >
-        <Music />
+        <Music
+          setDisplayDrawerRight={props.setDisplayDrawerRight}
+          setSongToReadLetter={props.setSongToReadLetter}
+        />
       </SectionItem>
 
       {/* Contact */}
