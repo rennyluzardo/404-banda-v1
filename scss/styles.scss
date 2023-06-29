@@ -1,9 +1,15 @@
 // Core
-@import "core/variables",
+@import "core/mq-config",
+"/node_modules/sass-mq/mq",
+"/node_modules/rfs/sass.sass",
+"core/variables",
 "core/globals";
 
 // Components
-@import "components/main-layout";
+@import "components/global/main-layout",
+"components/global/section-item",
+"components/global/section-list",
+"components/index/videos";
 
 // Pages
 @import "pages/index";
