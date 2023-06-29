@@ -92,3 +92,14 @@ a {
     color-scheme: dark;
   }
 }
+
+.primary-btn {
+  background-color: $secondary-color;
+  color: white;
+  font-weight: bold;
+  height: 40px;
+  width: 90px;
+  // font-size:
+
+  @include font-size(1em);
+}

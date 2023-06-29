@@ -1,5 +1,4 @@
-// @import "./node_modules/rfs/scss.scss";
-@import "/node_modules/rfs/sass.sass";
+// @import '/node_modules/sass-mq/mq';
 
 .section-videos {
   // padding: 5vh 10vw;
@@ -7,6 +6,14 @@
 
 .section-header {
   padding: 2em 2em 1em;
+
+  @include mq($from: tablet) {
+    padding: 2em 4em 1em;
+  }
+
+  @include mq($from: desktopL) {
+    padding: 4em 6em 1em;
+  }
 }
 
 .section-videos .section-header {
@@ -25,7 +32,7 @@
   line-height: normal;
   text-align: left;
   color: grey;
-  margin-top: 0.8em;
+  margin-top: 0.1em;
 
   @include font-size(1rem);
 }
@@ -77,9 +84,20 @@
 }
 
 .slider {
+  @include mq($from: desktopL) {
+    max-width: 1440px;
+  }
+
   &__img-box {
     img {
       width: 100%;
     }
+  }
+}
+
+.carousel-container {
+  @include mq($from: desktopL) {
+    display: flex;
+    justify-content: center;
   }
 }
