@@ -131,6 +131,8 @@
 
 .footer {
   margin-bottom: 60px;
+  background-color: $grey1;
+  color: $lightgrey1;
 
   @include font-size(.6rem);
 
@@ -143,7 +145,7 @@
 
 .content-container {
   width: 100%;
-  background-color: $bg-content;
+  background-color: $grey1;
 }
 
 .social {
@@ -176,9 +178,13 @@
   z-index: 1;
   margin-bottom: 30;
   margin-top: 21vh;
-  box-shadow: 1px 1px 20px 3px #00000085;
+  box-shadow: 0px -5px 4px 0px rgb(232 232 232);
 
   @include mq($from: tablet) {
     margin-top: 28vh;
   }
+}
+
+.footer-text {
+  margin-top: 3em;
 }
