@@ -21,7 +21,7 @@ const mockMusic = [
 ]
 
 
-function Music(props) {
+function Songs(props) {
   const [songToReadLetter, setSongToReadLetter] = useState({})
 
   const onShowViewLetter = song => {
@@ -33,7 +33,7 @@ function Music(props) {
   return (
     <Space
       direction='vertical'
-      className='playlist'
+      className='songs'
       align='center'
     >
       <List
@@ -45,6 +45,7 @@ function Music(props) {
               <a
                 key="list-loadmore-edit"
                 onClick={() => onShowViewLetter(item, index)}
+                className='songs__btn-show-letter'
               >Ver Letra</a>
             ]}
           >
@@ -60,4 +61,4 @@ function Music(props) {
   )
 }
 
-export default Music
+export default Songs

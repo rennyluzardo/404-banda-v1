@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Inter } from 'next/font/google'
-import { Layout, Space, Button, Row, Col, } from 'antd'
+import {
+  InstagramOutlined,
+  FacebookOutlined,
+  YoutubeOutlined,
+  MailOutlined,
+  PhoneOutlined,
+  HeartOutlined,
+  VideoCameraOutlined,
+  PlayCircleOutlined,
+  ContactsOutlined,
+} from '@ant-design/icons'
+import {
+  Layout, Space, Button, Row, Col, Divider,
+} from 'antd'
+import StickyNavBar from './StickyNavBar'
+
 const { Header, Footer, Content } = Layout
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,7 +28,7 @@ export const metadata = {
 const headerStyle = {
   textAlign: 'center',
   color: '#fff',
-  height: 64,
+  // height: 64,
   paddingInline: 50,
   lineHeight: '64px',
   width: '100%',
@@ -21,7 +36,6 @@ const headerStyle = {
   justifyContent: 'center',
   position: 'fixed',
   top: 0,
-  zIndex: 1,
 }
 const contentStyle = {
   textAlign: 'center',
@@ -32,8 +46,10 @@ const contentStyle = {
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
-  zIndex: 0,
+  zIndex: 1,
   marginBottom: 30,
+  marginTop: '21vh',
+  boxShadow: '1px 1px 20px 3px #00000085',
 }
 const footerStyle = {
   textAlign: 'center',
@@ -44,54 +60,101 @@ const footerStyle = {
   justifyContent: 'center',
 }
 
-export default function MainLayout({ children }) {
+function MainLayout({ children }) {
+  const [rotate, setRotate] = useState(false)
+  const [showTopNavBar, setShowTopNavBar] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setRotate(!rotate)
+    }, 2000)
+  }, [rotate])
+
+  useEffect(() => {
+    if (window.innerWidth > 768) {
+      setShowTopNavBar(true)
+    } else {
+      setShowTopNavBar(false)
+    }
+  }, [(typeof window !== 'undefined') && window])
+
+
   return (
     <Layout className='main-layout'>
-      <Header style={headerStyle} className='header'>
+      <Header className='header top-logo'>
         <Row
           className='header__container'
         >
-          <Col span={8}>
-            <Space align="start" className='logo'>
+          <Col span={24}>
+            <Space align="center" className='logo'>
               <a href='#'>
-                <img src='static/images/global/logo.png' href='#'></img>
+                <img className={rotate ? `rotate` : ''} src='static/images/global/logo.png' href='#'></img>
               </a>
-            </Space>
-          </Col>
-          <Col span={16}>
-            <Space
-              direction='horizontal'
-              align='end'
-              style={{
-                width: '100%',
-                justifyContent: 'flex-end',
-                paddingRight: '1em'
-              }}
-            >
-              <a href='#videos' className='menu-item'>Vídeos</a>
-              <a href='#musica' className='menu-item'>Canciones</a>
-              <a href='#contacto' className='menu-item'>Contacto</a>
             </Space>
           </Col>
         </Row>
       </Header>
-      <Content style={contentStyle}>
+      {
+        showTopNavBar &&
+        <Header className='header top-menu'>
+          <Row
+            className='header__container'
+          >
+            <Col span={24}>
+              <Space
+                direction='horizontal'
+                align='end'
+                style={{
+                  width: '100%',
+                  justifyContent: 'flex-end',
+                  paddingRight: '1em'
+                }}
+              >
+                <a href='#videos' className='menu-item'><VideoCameraOutlined className='menu-item__icon'/> Vídeos</a>
+                {/* <a href='#videos' className='menu-item'><VideoCameraOutlined size={100}/></a> */}
+                <Divider type="vertical" style={{ color: 'white' }} />
+                <a href='#musica' className='menu-item'><PlayCircleOutlined className='menu-item__icon'/> Canciones</a>
+                <Divider type="vertical" style={{ color: 'white' }} />
+                <a href='#contacto' className='menu-item'><ContactsOutlined className='menu-item__icon'/> Contacto</a>
+              </Space>
+            </Col>
+          </Row>
+        </Header>
+      }
+
+      <Content className='content'>
         <div
           className='content-container'>
           {children}
         </div>
       </Content>
+
+      {
+        !showTopNavBar &&
+        <StickyNavBar />
+      }
+
       <Footer
         style={footerStyle}
         className='footer'
       >
-        <div style={{
-          maxWidth: '1440px',
-          width: '100%',
-        }}>
-          Hecho con <span className="heart"></span> por Ing. Renny Luzardo. © 2023 404banda.com.
-        </div>
+        <Row justify={'center'}>
+          <Col span={24} className='social'>
+            <ul>
+              <li><InstagramOutlined /></li>
+              <li><FacebookOutlined /></li>
+              <li><YoutubeOutlined /></li>
+              <li><MailOutlined /></li>
+              <li><PhoneOutlined /></li>
+            </ul>
+          </Col>
+          <Col span={24}>
+            <p>Hecho con <HeartOutlined /> por Ing. Renny Luzardo. © 2023 404banda.com.</p>
+          </Col>
+        </Row>
       </Footer>
     </Layout >
   )
 }
+
+export default MainLayout

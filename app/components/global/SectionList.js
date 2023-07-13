@@ -2,7 +2,7 @@ import React, { useState, useEffect, } from 'react'
 import { Row, Col, Space, Avatar, List, Form, Input, Button, Card, } from 'antd'
 import SectionItem from './SectionItem'
 import Videos from '../index/Videos'
-import Music from '../index/Music'
+import Songs from '../index/Songs'
 import Contact from '../index/Contact'
 
 function SectionList(props) {
@@ -37,7 +37,7 @@ function SectionList(props) {
         title='Canciones'
         subtitle='Estas son nuestras mas recientes canciones.'
       >
-        <Music
+        <Songs
           setDisplayDrawerRight={props.setDisplayDrawerRight}
           setSongToReadLetter={props.setSongToReadLetter}
         />

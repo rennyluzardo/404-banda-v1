@@ -26,7 +26,7 @@ function Videos() {
           <Card
             title={video.title}
             bordered={false}
-            // style={{ backgroundColor: '#313131' }}
+            className='custom-card'
           >
             <iframe
               className='video-frame'

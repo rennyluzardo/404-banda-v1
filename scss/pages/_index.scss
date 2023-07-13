@@ -23,7 +23,7 @@
 .title {
   line-height: normal;
   text-align: left;
-  color: dimgrey;
+  color: white;
 
   @include font-size(3rem);
 }
@@ -31,7 +31,7 @@
 .description {
   line-height: normal;
   text-align: left;
-  color: grey;
+  color: white;
   margin-top: 0.1em;
 
   @include font-size(1rem);
@@ -56,15 +56,6 @@
   flex-direction: column;
 }
 
-.playlist {
-  padding: 0px 2em;
-  width: 100%;
-}
-
-.playlist .ant-space-item {
-  width: 100%;
-}
-
 #videos .ant-card-head {
   text-align: start;
 }
@@ -80,10 +71,12 @@
 }
 
 #contact-form label {
-  color: dimgrey;
+  color: white;
 }
 
 .slider {
+  margin-top: 0.04vh;
+
   @include mq($from: desktopL) {
     max-width: 1440px;
   }

@@ -1,6 +1,6 @@
 .section-videos {
   .ant-card-head-title {
-    // color: $secondary-color;
+    color: white;
   }
 
   .ant-card-body {
@@ -11,7 +11,11 @@
     padding: 1em 0;
 
     .ant-card-meta-description {
-      // color: white;
+      color: white;
     }
+  }
+
+  .custom-card {
+    background-color: $bg-card;
   }
 }

@@ -25,7 +25,7 @@ export default function Index() {
     <MainLayout>
       {/* Slider */}
       <div className='carousel-container'>
-        <Carousel autoplay id='main' className='slider'>
+        <Carousel autoplay={false} id='main' className='slider'>
           <div className='slider__img-box'>
             <div style={contentStyle}>
               <img src='static/images/slider/slider-1.png'></img>

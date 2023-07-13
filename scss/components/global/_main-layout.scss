@@ -3,16 +3,38 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-color: white;
 }
 
 .header {
+  text-align: center;
+  color: #fff;
+  // height: 64;
+  padding-inline: 50;
+  line-height: 64px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
   padding: 0 5px !important;
-  background-color: #313131;
 
   &__container {
     max-width: 1440px;
     width: 100%;
   }
+}
+
+.top-logo {
+  z-index: 0;
+  height: 17vh;
+  background-color: white;
+}
+
+.top-menu {
+  z-index: 2;
+  height: 64px;
+  background-color: transparent;
 }
 
 .space-align-container {
@@ -66,38 +88,97 @@
 }
 
 .logo {
-  width: 100%;
   position: relative;
   z-index: 1 !important;
   padding: 10px 10px 10px 10px;
 
   img {
-    height: 9vh;
+    height: 13vh;
+    transform: rotate(-25deg) translateX(7px) translateY(0px);
+    /* transform: rotate(36deg) translateX(7px) translateY(0px); */
+    transform-origin: top;
+    transition: transform 2s;
+
+    @include mq($from: tablet) {
+      height: 21vh;
+    }
+  }
+
+  .rotate {
+    transform: rotate(36deg) translateX(7px) translateY(0px);
   }
 }
 
 .menu-item {
-  @include font-size(.8rem);
-
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $primary-color;
   font-weight: bold;
   margin-right: 1.4vw;
 
+  @include font-size(.8rem);
+
   &:hover {
-    color: #ff3535;
+    color: $primary-color;
+  }
+
+  &__icon {
+    font-size: 1.6em;
+    margin-right: 0.2em;
   }
 }
 
 .footer {
+  margin-bottom: 60px;
+
   @include font-size(.6rem);
+
+  @include mq($from: desktop) {
+    margin-bottom: unset;
+  }
 }
 
-.header__container {
-
-}
+.header__container {}
 
 .content-container {
-  // max-width: 1440px;
   width: 100%;
-  margin-top: 63.9px;
+  background-color: $bg-content;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+
+    li {
+      margin: 0px 0.6em;
+
+      span {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.content {
+  text-align: center;
+  min-height: 120px;
+  line-height: 120px;
+  color: #fff;
+  // backgroundColor: beige
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  margin-bottom: 30;
+  margin-top: 21vh;
+  box-shadow: 1px 1px 20px 3px #00000085;
+
+  @include mq($from: tablet) {
+    margin-top: 28vh;
+  }
 }
