@@ -53,7 +53,6 @@ const contentStyle = {
 }
 const footerStyle = {
   textAlign: 'center',
-  color: 'darkgrey',
   // backgroundColor: 'beige',
   width: '100%',
   display: 'flex',
@@ -149,7 +148,9 @@ function MainLayout({ children }) {
             </ul>
           </Col>
           <Col span={24}>
-            <p>Hecho con <HeartOutlined /> por Ing. Renny Luzardo. © 2023 404banda.com.</p>
+            <p
+              className='footer-text'
+            >Hecho con <HeartOutlined /> por Ing. Renny Luzardo. © 2023 404banda.com.</p>
           </Col>
         </Row>
       </Footer>
