@@ -129,9 +129,9 @@ function MainLayout({ children }) {
           <Col span={24}>
             <Space align="center" justifyContent="center" className='logo'>
               <div class="back-door">
-                <h2>Bienvenidos</h2>
                 <p className='about-us'>
-                  Somos una agrupación de música bailable tex-mex...
+                  Somos una agrupación de música con acordeón que nace en la ciudad de Quito, Ecuador.
+                  Buena música que va desde el despecho a las caderas. ¡Ay ay ayyyyy!
                 </p>
                 <div class="frame-door">
                 </div>
