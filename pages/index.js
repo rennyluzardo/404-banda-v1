@@ -28,7 +28,7 @@ export default function Index() {
         <Carousel autoplay={false} id='main' className='slider'>
           <div className='slider__img-box'>
             <div style={contentStyle}>
-              <img src='static/images/slider/slider-1.png'></img>
+              <img src='static/images/slider/slider-3.png'></img>
             </div>
           </div>
           <div className='slider__img-box'>
@@ -38,7 +38,7 @@ export default function Index() {
           </div>
           <div className='slider__img-box'>
             <div style={contentStyle}>
-              <img src='static/images/slider/slider-3.png'></img>
+              <img src='static/images/slider/slider-1.png'></img>
             </div>
           </div>
           <div className='slider__img-box'>

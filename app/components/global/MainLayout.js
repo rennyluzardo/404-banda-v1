@@ -62,6 +62,7 @@ const footerStyle = {
 function MainLayout({ children }) {
   const [rotate, setRotate] = useState(false)
   const [showTopNavBar, setShowTopNavBar] = useState(false);
+  const [screenSize, setScreenSize] = useState({});
 
   useEffect(() => {
     setTimeout(() => {
@@ -70,13 +71,54 @@ function MainLayout({ children }) {
   }, [rotate])
 
   useEffect(() => {
-    if (window.innerWidth > 768) {
+    setScreenSize(getCurrentDimension())
+  }, []);
+
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenSize(getCurrentDimension())
+    }
+
+    window.addEventListener('resize', updateDimension)
+
+    if (screenSize.width > 768) {
       setShowTopNavBar(true)
     } else {
       setShowTopNavBar(false)
     }
-  }, [(typeof window !== 'undefined') && window])
 
+    return (() => {
+      window.removeEventListener('resize', updateDimension)
+    })
+  }, [screenSize])
+
+  useEffect(() => {
+    getCurrentDimension()
+
+    if (window) {
+      var door = document.querySelector(".door")
+      var logo = document.querySelector(".door a")
+      var thickness = document.querySelector(".thickness")
+      door.addEventListener("click", toggleDoor)
+
+      function toggleDoor() {
+        door.classList.toggle("door-open")
+        thickness.classList.toggle("thickness-open")
+
+        setTimeout(() => {
+          logo.classList.toggle('hide')
+        }, 250);
+      }
+    }
+
+  }, [])
+
+  function getCurrentDimension() {
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight
+    }
+  }
 
   return (
     <Layout className='main-layout'>
@@ -85,10 +127,23 @@ function MainLayout({ children }) {
           className='header__container'
         >
           <Col span={24}>
-            <Space align="center" className='logo'>
-              <a href='#'>
-                <img className={rotate ? `rotate` : ''} src='static/images/global/logo.png' href='#'></img>
-              </a>
+            <Space align="center" justifyContent="center" className='logo'>
+              <div class="back-door">
+                <h2>Bienvenidos</h2>
+                <p className='about-us'>
+                  Somos una agrupación de música bailable tex-mex...
+                </p>
+                <div class="frame-door">
+                </div>
+                <div class="door">
+                  <a href='#'>
+                    <img
+                      className={rotate ? `rotate` : ''}
+                      src='static/images/global/logo.png' href='#'></img>
+                  </a>
+                </div>
+                <div class="thickness"></div>
+              </div>
             </Space>
           </Col>
         </Row>
@@ -109,12 +164,12 @@ function MainLayout({ children }) {
                   paddingRight: '1em'
                 }}
               >
-                <a href='#videos' className='menu-item'><VideoCameraOutlined className='menu-item__icon'/> Vídeos</a>
+                <a href='#videos' className='menu-item'><VideoCameraOutlined className='menu-item__icon' /> Vídeos</a>
                 {/* <a href='#videos' className='menu-item'><VideoCameraOutlined size={100}/></a> */}
                 <Divider type="vertical" style={{ color: 'white' }} />
-                <a href='#musica' className='menu-item'><PlayCircleOutlined className='menu-item__icon'/> Canciones</a>
+                <a href='#musica' className='menu-item'><PlayCircleOutlined className='menu-item__icon' /> Canciones</a>
                 <Divider type="vertical" style={{ color: 'white' }} />
-                <a href='#contacto' className='menu-item'><ContactsOutlined className='menu-item__icon'/> Contacto</a>
+                <a href='#contacto' className='menu-item'><ContactsOutlined className='menu-item__icon' /> Contacto</a>
               </Space>
             </Col>
           </Row>
