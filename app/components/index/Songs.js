@@ -3,19 +3,51 @@ import { Row, Col, Space, Avatar, List, Form, Input, Button, Card, } from 'antd'
 
 const mockMusic = [
   {
-    title: 'Title 1',
+    title: 'Mix Cumbia Américo',
     script: '...'
   },
   {
-    title: 'Title 2',
+    title: 'Mix Selena',
     script: '...'
   },
   {
-    title: 'Title 3',
+    title: 'Mix Vallenato Romántico',
     script: '...'
   },
   {
-    title: 'Title 4',
+    title: 'Quiero Que Seas Mi Estrella',
+    script: '...'
+  },
+  {
+    title: 'Osito Dormilón',
+    script: '...'
+  },
+  {
+    title: 'Cuatro Rosas',
+    script: '...'
+  },
+  {
+    title: 'Hoja En Blanco',
+    script: '...'
+  },
+  {
+    title: 'Como Te Olvido',
+    script: '...'
+  },
+  {
+    title: 'No Podrán Separarnos',
+    script: '...'
+  },
+  {
+    title: 'Niña Bonita',
+    script: '...'
+  },
+  {
+    title: 'Olvidala',
+    script: '...'
+  },
+  {
+    title: 'Como Duele El Frío',
     script: '...'
   },
 ]
