@@ -47,7 +47,7 @@ function SectionList(props) {
       <SectionItem
         id='contacto'
         name='contacto'
-        title='Contacto'
+        title='Contrataciones'
         subtitle='Comunícate con nosotros a través de éste formulario de contacto.'
       >
         <Contact />
