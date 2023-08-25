@@ -26,5 +26,7 @@ $show-breakpoints: (
   desktopXl,
 );
 
-@use '/node_modules/sass-mq/_mq.scss' with ($breakpoints: $breakpoints,
-  $show-breakpoints: $show-breakpoints);
+@use '/node_modules/sass-mq/_mq.scss' with (
+  $breakpoints: $breakpoints,
+  // $show-breakpoints: $show-breakpoints
+  );
