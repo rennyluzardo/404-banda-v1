@@ -57,34 +57,7 @@
 }
 
 .heart {
-  background-color: red;
-  display: inline-block;
-  height: 12px;
-  margin: 0 10px;
-  position: relative;
-  top: 0;
-  transform: rotate(-45deg);
-  width: 12px;
-}
-
-.heart:before,
-.heart:after {
-  content: "";
-  background-color: red;
-  border-radius: 50%;
-  height: 12px;
-  position: absolute;
-  width: 12px;
-}
-
-.heart:before {
-  top: -5px;
-  left: 0;
-}
-
-.heart:after {
-  left: 5px;
-  top: 0;
+  color: $primary-color;
 }
 
 .space-door {
