@@ -33,7 +33,7 @@ function SectionList(props) {
       {/* Music */}
       <SectionItem
         id='musica'
-        name='musica'
+        name='songs'
         title='Canciones'
         subtitle='Estas son nuestras mas recientes canciones.'
       >
@@ -46,7 +46,7 @@ function SectionList(props) {
       {/* Contact */}
       <SectionItem
         id='contacto'
-        name='contacto'
+        name='contact'
         title='Contrataciones'
         subtitle='Comunícate con nosotros a través de éste formulario de contacto.'
       >

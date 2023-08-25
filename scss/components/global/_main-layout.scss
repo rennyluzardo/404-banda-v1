@@ -152,18 +152,23 @@
 }
 
 .footer {
-  margin-bottom: 55px;
-  background-color: $grey1;
+  background-color: $primary-color;
   color: $lightgrey1;
   z-index: 1;
   width: 100%;
-  max-width: 1440px;
-  padding: 24px 50px;
+  padding: 0px 0px 24px;
   z-index: 1;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 
   @include font-size(.6rem);
+
+  .ant-row {
+    padding-bottom: 55px;
+    width: 100%;
+    max-width: 1440px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: $grey1;
+  }
 }
 
 .header__container {}

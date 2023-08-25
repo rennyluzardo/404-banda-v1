@@ -209,7 +209,7 @@ function MainLayout({ children }) {
           <Col span={24}>
             <p
               className='footer-text'
-            >Hecho con <HeartOutlined /> por Ing. Renny Luzardo. © 2023 404banda.com.</p>
+            >Hecho con <HeartOutlined /> por Renny Luzardo. © 2023 404banda.com.</p>
           </Col>
         </Row>
       </Footer>
