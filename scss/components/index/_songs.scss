@@ -1,6 +1,7 @@
 .songs {
   padding: 0px 2em;
   width: 100%;
+  max-width: 950px;
 
   &__btn-show-letter {
     color: white;
@@ -12,9 +13,15 @@
 
   .ant-list-item-meta-title a {
     color: white !important;
+    text-align: start;
   }
 
   .ant-list-item-meta-description {
     color: white !important;
+    text-align: start;
+  }
+
+  .ant-list-item-meta-title {
+    text-align: start;
   }
 }
