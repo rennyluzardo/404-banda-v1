@@ -47,7 +47,7 @@ export default function Index() {
     <MainLayout>
       {/* Slider */}
       <div className='carousel-container'>
-        <Carousel autoplay={false} id='main' className='slider'>
+        <Carousel autoplay id='main' className='slider'>
           <div className='slider__img-box'>
             <div style={contentStyle}>
               <Image
