@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: white;
+  background-color: $primary-color;
 }
 
 .header {
@@ -28,13 +28,13 @@
 .top-logo {
   z-index: 0;
   height: 55vw;
-  background-color: $grey1;
+  background-color: $primary-color;
 }
 
 .top-menu {
   z-index: 2;
   height: 64px;
-  background-color: transparent;
+  background-color: $black-transparent-1;
 }
 
 .space-align-container {
@@ -135,7 +135,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $primary-color;
+  color: $white-1;
   font-weight: bold;
   margin-right: 1.4vw;
 
@@ -152,22 +152,24 @@
 }
 
 .footer {
-  margin-bottom: 60px;
+  margin-bottom: 55px;
   background-color: $grey1;
   color: $lightgrey1;
+  z-index: 1;
+  width: 100%;
+  max-width: 1440px;
+  padding: 24px 50px;
+  z-index: 1;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 
   @include font-size(.6rem);
-
-  @include mq($from: desktop) {
-    margin-bottom: unset;
-  }
 }
 
 .header__container {}
 
 .content-container {
   width: 100%;
-  background-color: $grey1;
 }
 
 .social {
