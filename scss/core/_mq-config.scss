@@ -1,19 +1,29 @@
 $breakpoints: (
-  mobile: 320px,
+  mobileXxxs: 320px,
+  mobileXxs: 375px,
+  mobileXs: 425px,
+  mobileS: 505px,
+  mobile: 590px,
   tablet: 768px,
   desktop: 1024px,
   desktopL: 1440px,
   // Tweakpoints
   desktopAd: 810px,
   mobileLandscape: 480px,
+  desktopXl: 2560px,
 );
 
 $show-breakpoints: (
+  mobileXxxs,
+  mobileXxs,
+  mobileXs,
+  mobileS,
   mobile,
   mobileLandscape,
   tablet,
   desktop,
-  desktopL
+  desktopL,
+  desktopXl,
 );
 
 @use '/node_modules/sass-mq/_mq.scss' with ($breakpoints: $breakpoints,
