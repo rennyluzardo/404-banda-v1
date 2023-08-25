@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef, } from 'react'
 import { Inter } from 'next/font/google'
 import {
   InstagramOutlined,
@@ -15,6 +15,8 @@ import {
   Layout, Space, Button, Row, Col, Divider,
 } from 'antd'
 import StickyNavBar from './StickyNavBar'
+import Image from 'next/image'
+import { getCurrentDimension } from '@/libs/utils'
 
 const { Header, Footer, Content } = Layout
 
@@ -60,9 +62,17 @@ const footerStyle = {
 }
 
 function MainLayout({ children }) {
+  const defaultSliderDimensions = {
+    width: 320,
+    height: 120
+  }
+
   const [rotate, setRotate] = useState(false)
   const [showTopNavBar, setShowTopNavBar] = useState(false);
-  const [screenSize, setScreenSize] = useState({});
+  const [screenSize, setScreenSize] = useState(defaultSliderDimensions);
+
+  const refDoor = useRef(null)
+  const refLogo = useRef(null)
 
   useEffect(() => {
     setTimeout(() => {
@@ -72,7 +82,7 @@ function MainLayout({ children }) {
 
   useEffect(() => {
     setScreenSize(getCurrentDimension())
-  }, []);
+  }, [])
 
   useEffect(() => {
     const updateDimension = () => {
@@ -94,31 +104,21 @@ function MainLayout({ children }) {
 
   useEffect(() => {
     getCurrentDimension()
+    const door = refDoor.current
+    const logo = refLogo.current
 
-    if (window) {
-      var door = document.querySelector(".door")
-      var logo = document.querySelector(".door a")
-      var thickness = document.querySelector(".thickness")
-      door.addEventListener("click", toggleDoor)
+    // var thickness = document.querySelector(".thickness")
+    door.addEventListener('click', toggleDoor)
 
-      function toggleDoor() {
-        door.classList.toggle("door-open")
-        thickness.classList.toggle("thickness-open")
+    function toggleDoor() {
+      door.classList.toggle('door-open')
+      // thickness.classList.toggle("thickness-open")
 
-        setTimeout(() => {
-          logo.classList.toggle('hide')
-        }, 250);
-      }
+      setTimeout(() => {
+        logo.classList.toggle('hide')
+      }, 250)
     }
-
   }, [])
-
-  function getCurrentDimension() {
-    return {
-      width: window.innerWidth,
-      height: window.innerHeight
-    }
-  }
 
   return (
     <Layout className='main-layout'>
@@ -127,22 +127,26 @@ function MainLayout({ children }) {
           className='header__container'
         >
           <Col span={24}>
-            <Space align="center" justifyContent="center" className='logo'>
-              <div class="back-door">
+            <Space align="center" justifycontent="center" className='space-door'>
+              <div className="back-door">
                 <p className='about-us'>
                   Somos una agrupación de música con acordeón que nace en la ciudad de Quito, Ecuador.
                   Buena música que va desde el despecho a las caderas. ¡Ay ay ayyyyy!
                 </p>
-                <div class="frame-door">
+                <div className="frame-door">
                 </div>
-                <div class="door">
-                  <a href='#'>
-                    <img
+                <div className="door" ref={refDoor}>
+                  <a href='#' ref={refLogo}>
+                    <Image
                       className={rotate ? `rotate` : ''}
-                      src='static/images/global/logo.png' href='#'></img>
+                      src='/static/images/global/logo.png'
+                      alt=''
+                      width={100}
+                      height={100}
+                    />
                   </a>
                 </div>
-                <div class="thickness"></div>
+                {/* <div class="thickness"></div> */}
               </div>
             </Space>
           </Col>
