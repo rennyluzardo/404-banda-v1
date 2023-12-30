@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: $primary-color;
+  background-color: $secondary-color;
 }
 
 .header {
@@ -15,9 +15,11 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  position: fixed;
+  // position: fixed;
   top: 0;
   padding: 0 5px !important;
+  height: calc(100% - 170px);
+  position: unset;
 
   &__container {
     max-width: 1440px;
@@ -27,8 +29,8 @@
 
 .top-logo {
   z-index: 0;
-  height: 55vw;
-  background-color: $primary-color;
+  height: 100%;
+  background-color: $secondary-color;
 }
 
 .top-menu {
@@ -57,14 +59,18 @@
 }
 
 .heart {
-  color: $primary-color;
+  color: $secondary-color;
 }
 
 .space-door {
   position: relative;
   z-index: 1 !important;
-  padding: 10px 10px 10px 10px;
+  padding: 50px 10px 10px 10px;
   height: 100%;
+
+  @include mq($from: tablet) {
+    padding: 70px 10px 10px 10px;
+  }
 
   .ant-space-item {
     height: 100%;
@@ -115,7 +121,7 @@
   @include font-size(.8rem);
 
   &:hover {
-    color: $primary-color;
+    color: $secondary-color;
   }
 
   &__icon {
@@ -125,7 +131,7 @@
 }
 
 .footer {
-  background-color: $primary-color;
+  background-color: $secondary-color;
   color: $lightgrey1;
   z-index: 1;
   width: 100%;
@@ -174,11 +180,14 @@
   line-height: 120px;
   color: #fff;
   // backgroundColor: beige
-  width: 100%;
+  // width: 100%;
   display: flex;
   justify-content: center;
   z-index: 1;
   margin-top: 50vw;
+  width: 0px;
+  height: 0px;
+  transition: all;
 
   @include mq($from: mobileXxs) {
     margin-top: 46vw;
@@ -202,6 +211,13 @@
 
 }
 
+.content-open {
+  width: 100%;
+  margin-top: 0;
+  position: absolute;
+  top: 4vh;
+}
+
 .footer-text {
   margin-top: 3em;
 }
@@ -212,10 +228,27 @@
   height: 100%;
   margin: 0 auto;
   padding-top: 25px;
+  min-width: 220px;
+  max-width: 220px;
+  height: 150vw;
+  max-height: 480px;
+  width: 220px;
+
+  @include mq($from: tablet) {
+    max-width: 300px;
+    height: 52vw;
+    max-height: 430px;
+  }
+
+  @include mq($from: desktop) {
+    max-width: 300px;
+    height: 52vw;
+    max-height: 430px;
+  }
 
   @include mq($from: desktopL) {
     width: 33vw;
-    height: 50%;
+    height: 100%;
   }
 }
 
@@ -244,14 +277,14 @@
   position: absolute;
   background-color: white;
   width: 105px;
-  height: 75px;
+  height: 30%;
   border: 10px ridge white;
-  top: 22.5px;
+  top: 54.5px;
   box-shadow: inset 0px 0px 3px 0.1px black;
 
   @include mq($from: mobileXxs) {
     width: 150px;
-    height: 95px;
+    height: 135px;
   }
 
   @include mq($from: mobileXs) {
@@ -272,8 +305,22 @@
 
   @include mq($from: tablet) {
     top: 16%;
-    width: 70%;
-    height: 50%;
+    width: 60%;
+    height: 30%;
+  }
+}
+
+.door:before {
+  @include mq($from: mobileXxs) {
+    top: 27.5px;
+  }
+}
+
+.door:after {
+  top: 50%;
+
+  @include mq($from: mobileXxs) {
+    top: 53%;
   }
 }
 
@@ -283,14 +330,21 @@
   top: 0px;
   left: 0px;
   width: 58vw;
+  min-width: 220px;
   height: 100%;
   border: 10px solid white;
   transform-origin: left;
   transition: all 0.5s ease-in-out;
   z-index: 0;
+  min-width: 220px;
+  max-width: 100%;
 
   @include mq($from: desktopL) {
     width: 33vw;
+  }
+
+  @include mq($from: tablet) {
+    max-width: 100%;
   }
 }
 
@@ -385,4 +439,35 @@
     line-height: calc(($desktopXl * 10px) / 320);
     margin-top: calc(($desktopXl * 20px) / $desktopL);
   }
+}
+
+.knob {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background-color: #eeba0b;
+  top: 43%;
+  left: 86%;
+  border-radius: 2px;
+}
+
+.knob:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: #f1c83c;
+  width: 18px;
+  height: 18px;
+  left: -1px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.knob:after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  background-color: #333;
+  top: 20px;
+  left: 8.5px;
 }

@@ -70,19 +70,45 @@ function MainLayout({ children }) {
   const [rotate, setRotate] = useState(false)
   const [showTopNavBar, setShowTopNavBar] = useState(false);
   const [screenSize, setScreenSize] = useState(defaultSliderDimensions);
+  const [showContent, setshowContent] = useState(false);
 
   const refDoor = useRef(null)
   const refLogo = useRef(null)
+
+  const door = refDoor.current
+  const logo = refLogo.current
+
+  useEffect(() => {
+    function toggleDoor() {
+      door.classList.toggle('door-open')
+      setshowContent(!showContent)
+      // thickness.classList.toggle("thickness-open")
+
+      setTimeout(() => {
+        logo.classList.toggle('hide')
+      }, 250)
+    }
+
+    setScreenSize(getCurrentDimension())
+    getCurrentDimension()
+
+    // var thickness = document.querySelector(".thickness")
+    if (door) {
+      door.addEventListener('click', toggleDoor)
+    }
+
+    return () => {
+      if (door) {
+        door.removeEventListener('click', toggleDoor)
+      }
+    }
+  }, [door, logo, showContent])
 
   useEffect(() => {
     setTimeout(() => {
       setRotate(!rotate)
     }, 2000)
   }, [rotate])
-
-  useEffect(() => {
-    setScreenSize(getCurrentDimension())
-  }, [])
 
   useEffect(() => {
     const updateDimension = () => {
@@ -102,24 +128,6 @@ function MainLayout({ children }) {
     })
   }, [screenSize])
 
-  useEffect(() => {
-    getCurrentDimension()
-    const door = refDoor.current
-    const logo = refLogo.current
-
-    // var thickness = document.querySelector(".thickness")
-    door.addEventListener('click', toggleDoor)
-
-    function toggleDoor() {
-      door.classList.toggle('door-open')
-      // thickness.classList.toggle("thickness-open")
-
-      setTimeout(() => {
-        logo.classList.toggle('hide')
-      }, 250)
-    }
-  }, [])
-
   return (
     <Layout className='main-layout'>
       <Header className='header top-logo'>
@@ -127,15 +135,16 @@ function MainLayout({ children }) {
           className='header__container'
         >
           <Col span={24}>
-            <Space align="center" justifycontent="center" className='space-door'>
-              <div className="back-door">
-                <p className='about-us'>
+            <Space align='center' justifycontent='center' className='space-door'>
+              <div className='back-door'>
+                {/* <p className='about-us'>
                   Somos una agrupación de música con acordeón que nace en la ciudad de Quito, Ecuador.
                   Buena música que va desde el despecho a las caderas. ¡Ay ay ayyyyy!
-                </p>
-                <div className="frame-door">
+                </p> */}
+                <div className='frame-door'>
                 </div>
-                <div className="door" ref={refDoor}>
+                <div className='door' ref={refDoor}>
+                  <div className='knob'></div>
                   <a href='#' ref={refLogo}>
                     <Image
                       className={rotate ? `rotate` : ''}
@@ -146,7 +155,7 @@ function MainLayout({ children }) {
                     />
                   </a>
                 </div>
-                {/* <div class="thickness"></div> */}
+                {/* <div class='thickness'></div> */}
               </div>
             </Space>
           </Col>
@@ -180,12 +189,15 @@ function MainLayout({ children }) {
         </Header>
       }
 
-      <Content className='content'>
-        <div
-          className='content-container'>
-          {children}
-        </div>
-      </Content>
+      {
+        showContent &&
+        <Content className='content'>
+          <div
+            className='content-container'>
+            {children}
+          </div>
+        </Content>
+      }
 
       {
         !showTopNavBar &&
@@ -209,7 +221,7 @@ function MainLayout({ children }) {
           <Col span={24}>
             <p
               className='footer-text'
-            >Hecho con <HeartOutlined className='heart'/> por Renny Luzardo. © 2023 404banda.com.</p>
+            >Hecho con <HeartOutlined className='heart' /> por Renny Luzardo. © 2023 404banda.com.</p>
           </Col>
         </Row>
       </Footer>
